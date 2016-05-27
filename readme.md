@@ -27,7 +27,7 @@ The third is the most difficult problem of HMM: to adjust the model parameters A
 
 ## Code example and more
 
-Check the pdf file included [Learning graphical models](http://github.com/akyrey/HiddenMarkovModel_Solver/raw/master/) for a description of the implementation, links and additional informations.
+Check the pdf file included [Learning graphical models](https://github.com/akyrey/HiddenMarkovModel_Solver/blob/master/Learning%20graphical%20models.pdf) for a description of the implementation, links and additional informations.
 
 ## Motivation
 
@@ -35,4 +35,4 @@ The project has been developed for university purpouse.
 
 ## License
 
-HiddenMarkovModel_Solver is released under the [MIT license](http://github.com/akyrey/HiddenMarkovModel_Solver/raw/master/LICENSE).
+HiddenMarkovModel_Solver is released under the [MIT license](https://github.com/akyrey/HiddenMarkovModel_Solver/raw/master/LICENSE).
