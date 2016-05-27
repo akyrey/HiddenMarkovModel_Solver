@@ -5,26 +5,6 @@ An HMM is a special case of a dynamic Bayesian network, a Bayesian network which
 An HMM is completely represented given a transition matrix A, an observation matrix B and the initial state probabilities π.
 The triplet λ = < A, B, π > fully define an HMM, where A is a distribution governing the probability of transition from any state value qi to another state value qj, B is a distribution governing the probability of observing symbol vk in every state value qi and π is a distribution specifying for every state value qi the probability of being in the initial state.
 
-Hidden Markov Models allow, among other things, to infer the most likely sequence of states that produced a given output sequence, to infer which will be the more likely next state (and thus predicting the next output) and to calculate the probability that a given sequence of outputs originated from the system (allowing the use of HMM for sequence classification).
-
-There are three problems related to HMM:
-1.	Given an observation sequence O, compute the probability P(O|λ) which it has been produced by λ.
-2.	Given an observation sequence O and a model λ, compute the most likely sequence of states in λ which produce O
-3.	Given an observation sequence O and a model λ, estimate A, B and π from λ in order to maximize P(O|λ)
-
-Forward-backward algorithm
-The first problem could be solved with a brute force approach, testing all the possible sequences of states and comparing them, with a complexity O(N^T * T), where N is the number of state values and T the number of observations. This is usually unfeasible in practice.
-The forward-backward algorithm makes use of the principle of dynamic programming to compute efficiently the values that are required to obtain the posterior marginal distributions in two passes: the first goes forward in time while the second goes backward. The first pass computes the probability to end up in any possible state at each time step given the previous observations in the sequence. In the second pass, the algorithm computes a set of backward probabilities which provide the probability of observing the remaining observations given any previous starting point. The two passes get combined to obtain the distribution over states at any specific point in time, given the entire observation sequence, so the most likely state for any point in time.
-
-Viterbi algorithm
-Even if the forward-backward algorithm computes the most likely state at each time step, the most likely sequence of hidden states has to be computed using another dynamic programming algorithm, the Viterbi algorithm, that returns the so called Viterbi path.
-The base step is defined as the likelihood score of the most likely sequence of hidden states ending in state i and the first t observations.
-The actual state sequence is retrieved by backtracking the transitions that maximize the δ scores for each t and j.
-The time complexity of this algorithm is O(N^2 * T).
-
-Baum-Welch algorithm
-The third is the most difficult problem of HMM: to adjust the model parameters A, B and π to maximise the probability of the observation sequence given the model. The Baum-Welch algorithm uses an iterative procedure to locally maximize P(O|λ). The procedure of re-estimation is composed by iterative update and improvement of HMM parameters.
-
 ## Code example and more
 
 Check the pdf file included [Learning graphical models](https://github.com/akyrey/HiddenMarkovModel_Solver/blob/master/Learning%20graphical%20models.pdf) for a description of the implementation, links and additional informations.
