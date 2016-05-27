@@ -27,7 +27,7 @@ The third is the most difficult problem of HMM: to adjust the model parameters A
 
 ## Code example and more
 
-Check the pdf file included "Learning graphical models" for a description of the implementation, links and additional informations.
+Check the pdf file included [Learning graphical models](http://github.com/akyrey/HiddenMarkovModel_Solver/raw/master/) for a description of the implementation, links and additional informations.
 
 ## Motivation
 
